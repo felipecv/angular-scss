@@ -1,2 +1,2 @@
 # angular-scss
-Default AngularJS + Sass
+Default AngularJS Project with Sass structure properly set.
