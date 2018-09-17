@@ -1,0 +1,69 @@
+html, body {
+    height: 100%!important;
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+
+    background-color: $light;
+    font-size: 13px;
+}
+
+/* H1 - H6 font */
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* General Links */
+a {
+    color: $primary;
+}
+a:hover,
+a:active,
+a:focus {
+    outline: none;
+    text-decoration: none;
+    color: darken($primary,20%);
+}
+
+// code tag
+
+code {
+    color: $primary;
+    background-color: lighten($light-ghost,10%);
+}
+
+textarea#xml {
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+
+//config wrapper body
+
+.wrapper {
+    overflow-x: hidden;
+    overflow-y: auto;
+    &:before {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
+
+
+.layout-top-nav .content-wrapper,
+.layout-top-nav .main-footer {
+    margin-left: 0;
+    @include responsive(max-sm) {
+        transform: translate(230px, 0);
+    }
+    @include responsive(min-sm) {
+        margin-left: 0;
+    }
+}

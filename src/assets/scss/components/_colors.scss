@@ -1,0 +1,27 @@
+$cores: (
+  primary: $primary, 
+  secondary: $secondary, 
+  ghost: $ghost,
+  light-ghost: $light-ghost,
+  white: $white,
+  black: $black,
+  light: $light,
+  dark: $dark,
+  success: $success,
+  danger: $danger,
+  warning: $warning,
+  info: $info
+
+);
+
+@each $name, $color in $cores {
+    .textcolor--#{$name} {
+        color: #{$color};
+    }
+    .bgcolor--#{$name} {
+        background-color: #{$color};
+    }
+    .bordercolor--#{$name} {
+        border-color: #{$color}!important;
+    }
+}

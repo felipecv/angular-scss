@@ -1,0 +1,199 @@
+@import 'breakpoints';
+
+@mixin placeholder {
+	&.placeholder 				 { @content; }
+	&:-moz-placeholder 			 { @content; }
+	&::-moz-placeholder 		 { @content; }
+	&:-ms-input-placeholder      { @content; }  
+	&::-webkit-input-placeholder { @content; }
+}
+
+// Mixin para incluir breakpoints
+@mixin responsive($size) {
+
+	// user nav-menu
+	@if ($size == nav-lg) {
+		@media screen and (min-width:#{$nav-lg}) {
+			@content;
+		}
+	}
+	@if ($size == max-nav-lg) {
+		@media screen and (max-width:#{$max-nav-lg}) {
+			@content;
+		}
+	}
+	
+	// 1200px
+	@if ($size == lg){
+		@media screen and (max-width:#{$lg}){
+			@content;
+		}
+	}
+	@if ($size == min-lg){
+		@media screen and (min-width:#{$lg}){
+			@content;
+		}	
+	}
+	
+	// 992px
+	@if ($size == md){
+		@media screen and (max-width:#{$md}){
+			@content;
+		}
+	}
+	@if ($size == min-md){
+		@media screen and (min-width:#{$md}){
+			@content;
+		}	
+	}
+
+	@if ($size == max-md){
+		@media screen and (max-width:#{$max-md}){
+			@content;
+		}	
+	}
+	
+	// 767px / 768px / 769px
+	@if ($size == max-sm){
+		@media screen and (max-width:#{$max-sm}){
+			@content; 
+		}
+	}
+	
+	// 768px
+	@if ($size == sm){
+		@media screen and (max-width:#{$sm}){
+			@content;
+		}
+	} 
+	@if ($size == min-sm){
+		@media screen and (min-width:#{$sm}){
+			@content;
+		}
+	}
+	
+	// 769
+	@if ($size == min-sm2){
+		@media screen and (min-width:#{$min-sm}){
+			@content;
+		}
+	}
+
+	// 480px
+	@if ($size == max-xs){
+		@media screen and (max-width:#{$max-xs}){
+			@content;
+		}
+	}
+	@if ($size == min-xs){
+		@media screen and (min-width:#{$xs}){
+			@content;
+		}	
+	}
+
+	// 380px
+	@if ($size == xss){
+		@media screen and (max-width:#{$xss}){
+			@content;
+		}
+	}
+	@if ($size == min-xss){
+		@media screen and (min-width:#{$xss}){
+			@content;
+		}	
+	}	
+}
+
+// Mixin para IE9+
+@mixin ie() {
+	@media screen and (min-width:0\0) {
+		@content;
+	}	
+}
+
+@mixin flexMiddle() {
+	display: flex;
+	align-items: center;
+}
+
+// Mixins
+@mixin transform($value){
+	-webkit-transform: $value;
+	-ms-transform: $value;
+	transform: $value;
+}
+
+@mixin transition($value){
+	-webkit-transition: $value;
+	-ms-transition: $value;
+	transition: $value;  
+}
+
+@mixin animation($value){
+	-webkit-animation:($value); 
+	-ms-animation:($value);
+	animation:($value);
+}
+
+%display-flex {
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin flex-wrap($value){
+	flex-wrap: $value;
+	-webkit-flex-wrap: $value;
+	-ms-flex-wrap: $value;
+}
+
+@mixin flex($value){
+	-webkit-box-flex: $value;   /* OLD - iOS 6-, Safari 3.1-6 */
+	-webkit-flex: $value;       /* Safari 6.1+. iOS 7.1+, BB10 */
+	-ms-flex: $value;           /* IE 10 */
+	flex: $value; 
+}
+
+@mixin align-item($value){
+	-webkit-align-items: $value;
+	-ms-align-items: $value;
+	align-items: $value;
+}
+
+@mixin justify($value){
+	-webkit-justify-content: $value;
+	justify-content: $value;
+}
+
+// Adiciona o scale de 0 a 1
+@mixin scaleTo() {
+	@include keyframes(scaleTo) {
+		100% {
+			@include transform(scale(1));
+		} 
+	}
+}
+
+// Adiciona o opacity de 0 para 1
+@mixin fadeIn() {
+	@include keyframes(fadeIn) {
+		100% {
+			opacity: 1; 
+		} 
+	}
+}
+
+@mixin keyframes($value){
+	@-webkit-keyframes #{$value}{
+		@content;
+	}
+	@-moz-keyframes #{$value}{
+		@content;
+	}
+	@-ms-keyframes #{$value}{
+		@content;
+	}
+	@keyframes #{$value}{
+		@content;
+	}			
+}

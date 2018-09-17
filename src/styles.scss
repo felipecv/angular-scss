@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+//Config
+@import 'assets/scss/config/_mixins.scss';
+@import 'assets/scss/config/_color.scss';
+@import 'assets/scss/config/_reset.scss';
+
+//Components
+@import 'assets/scss/components/_colors.scss';

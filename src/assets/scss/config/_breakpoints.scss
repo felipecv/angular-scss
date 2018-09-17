@@ -1,0 +1,21 @@
+// Device screen sizes variables
+
+$xss	: 320px;
+$xs 	: 480px; 
+$sm 	: 768px;  
+$md 	: 992px;
+$lg 	: 1200px;
+
+$nav-lg : 1359px;
+
+//--
+$min-sm : $sm + 1;
+
+//--
+$max-xss: $xss - 1;
+$max-xs : $xs  - 1;
+$max-sm : $sm  - 1;  
+$max-md : $md  - 1;  
+$max-lg : $lg  - 1;
+
+$max-nav-lg : $nav-lg - 1;
